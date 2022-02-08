@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Niclas Schult" />
+  <title>Vim Commands</title>
+  <style type="text/css">
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Vim Commands</h1>
+<h2 class="author">Niclas Schult</h2>
+</div>
+<dl>
+<dt>tags</dt>
+<dd><a href="id:bb01c588-7c51-4cdc-8c85-eeb89ce8e6b7">VIM</a>
+</dd>
+</dl>
+<h1 id="vim-cheat-sheet">Vim Cheat Sheet</h1>
+<p><a href="https://vim.rtorr.com/">Cheat Sheet Link</a></p>
+<h1 id="basic-navigation">Basic Navigation</h1>
+<ul>
+<li>Use j,k,h,l for navigating your document</li>
+<li>Normally, you could also use { and } to navigate sections, but as these are not very handy when using a German keyboard layout, in my config you can navigate sections by ä, ö, C-ä and C-ö</li>
+</ul>
+<h1 id="verbs-and-modifiers">Verbs and modifiers</h1>
+<p><a href="https://yanpritzker.com/learn-to-speak-vim-verbs-nouns-and-modifiers-d7bfed1f6b2d?gi=b06e7fe9c002">https://yanpritzker.com/learn-to-speak-vim-verbs-nouns-and-modifiers-d7bfed1f6b2d?gi=b06e7fe9c002</a></p>
+<h2 id="selection">Selection:</h2>
+<p>Using vim is like talking to your editor in ‘verb modifier object’ sentences, turned into acronyms</p>
+<ul>
+<li><p>learn some verbs:</p>
+<ul>
+<li>v (visual)</li>
+<li>c (change)</li>
+<li>d (delete)</li>
+<li>y (yank/copy).</li>
+</ul>
+<p>these are the most important. there are others</p></li>
+<li><p>learn some modifiers</p>
+<ul>
+<li>i (inside)</li>
+<li>a (around)</li>
+<li>t (till..finds a character)</li>
+<li>f (find..like till except including the char)</li>
+<li>/ (search..find a string/regex)</li>
+</ul></li>
+<li><p>learn some text objects</p>
+<ul>
+<li>w (word)</li>
+<li>s (sentence)</li>
+<li>p (paragraph)</li>
+<li>b (block/parentheses)</li>
+<li>t (tag, works for html/xml) there are others</li>
+</ul></li>
+</ul>
+<p>To move efficiently in vim, don’t try to do anything by pressing keys many times, instead speak to the editor in sentences</p>
+<ul>
+<li>Examples
+<ul>
+<li>delete the current word: diw (delete inside word)</li>
+<li>change current sentence: cis (change inside sentence)</li>
+<li>change a string inside quotes: ci” (change inside quote)</li>
+<li>change until next occurrence of ‘foo’: c/foo (change search foo)</li>
+<li>change everything from here to the letter X: ctX</li>
+<li>visually select this paragraph: vap (visual around paragraph)</li>
+</ul></li>
+</ul>
+<h1 id="search-and-replace">Search and replace</h1>
+<p>:s/foo/bar/g Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.</p>
+<p>:%s/foo/bar/g Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.</p>
+<p><a href="https://vim.fandom.com/wiki/Search_and_replace">https://vim.fandom.com/wiki/Search_and_replace</a></p>
+<h1 id="swap-chars">Swap chars</h1>
+<p>x -&gt; p</p>
+<h1 id="vim-medium-article"><a href="https://link.medium.com/VmPLvgotadb">vim medium article</a></h1>
+<h1 id="surround-with-quotes">surround with quotes</h1>
+<ul>
+<li>ysiw"</li>
+</ul>
+</body>
+</html>
